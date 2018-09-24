@@ -25,9 +25,9 @@
     </div>
 
     <div *ngIf="!productoService.cargando" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a *ngFor="let producto of productoService.productos" routerLink="/item" class="animated fadeInDown rk-item ae-masonry__item">
+        <a *ngFor="let producto of productoService.productos" [routerLink]="['/item',producto.cod]" class="animated fadeInDown rk-item ae-masonry__item">
             <img src="assets/productos/{{ producto.url }}.jpg" alt="">
-            <div class="item-meta">
+            <div [routerLink]="['/item', producto.cod]" class="item-meta">
                 <h2>{{ producto.titulo }}</h2>
                 <p>{{ producto.categoria }}</p>
             </div>
